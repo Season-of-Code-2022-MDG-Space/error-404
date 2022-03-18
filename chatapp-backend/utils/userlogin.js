@@ -14,7 +14,8 @@ const newUsers=new mongoose.Schema({
         type:String,
         required:true
     },
-    friends:[{type:String}]
+    friends:[{type:String}],
+    likes:[{type:String}]
 })
 
 const register=new mongoose.model("register",newUsers)

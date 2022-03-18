@@ -155,12 +155,41 @@ app.get("/friendReq",async (req,res)=>{
 app.post("/friends",async (req,res)=>{
     const username=req.body.username
     const people=req.body.people
-    const client=await regis.updateMany({name:username},{$push:{friends:people}})
-    const reciever= await regis.updateMany({name:people},{$push:{friends:username}})
-    res.send("you are now friends")
+    const userExist=regis.findOne({name:people})
+    if(userExist!=null){
+        const client=await regis.updateMany({name:username},{$push:{friends:people}})
+        const reciever= await regis.updateMany({name:people},{$push:{friends:username}})
+        res.send("you are now friends")
+    }
+    else{
+        res.send("such a user doesn't exist")
+    }
+    
     console.log(regis.find())
 })
+app.post("/movies",async (req,res)=>{
+   const animeName=req.body.animeName
+   const currUser=req.body.currUser
+   const currMail=req.body.currMail
+   const userExist=regis.findOne({email:currMail})
+   if(userExist!=null){
 
+      if(userExist.find({likes:[animeName]})==null){
+          const client=await regis.updateMany({email:currMail},{$push:{likes:animeName}})
+          res.redirect(`//localhost:3000/movies.html?name=${currUser}&email=${currMail}`)
+
+        }
+        else{
+          res.redirect(`//localhost:3000/movies.html?name=${currUser}&email=${currMail}`)
+        
+        }
+    }
+    else{
+        res.send("error")
+    }
+
+
+})
 app.post("/chatroom",async (req,res)=>{
     try {
         const newRegisters=new Register({

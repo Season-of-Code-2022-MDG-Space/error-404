@@ -6,3 +6,5 @@ console.log(names,email)
 
 const allFri=document.querySelector(".friendsall")
 allFri.setAttribute("href",`//localhost:3000/friends.html?name=${names}&email=${email}`)
+const movie=document.querySelector(".movie")
+movie.setAttribute("href",`//localhost:3000/movies.html?name=${names}&email=${email}`)

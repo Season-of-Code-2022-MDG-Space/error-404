@@ -5,8 +5,12 @@ var url = new URL(url_string);
 var names = url.searchParams.get("name");
 var email = url.searchParams.get("email");
 console.log(names,email)
+const u=document.querySelector(".username")
+const submit=document.querySelector(".submit")
 
-
+submit.addEventListener("click",()=>{
+    u.value=names
+})
 const btn=document.querySelector(".btn")
 async function friends(){
     const friends=await fetch("/friendReq")
