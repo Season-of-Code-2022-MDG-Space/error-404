@@ -7,7 +7,7 @@ console.log(names,email)
 async function getmovie(){
     const getmovies=await fetch('/allMovies')
     const data= await getmovies.json();
-    console.log(data)
+    // console.log(data)
     const content=document.querySelector(".content")
     for(let i=0;i<data.length;i++){
         const card=document.createElement("div")
@@ -32,6 +32,12 @@ async function getmovie(){
         form.appendChild(inpuAnimeName)
         form.appendChild(inpuEmail)
         form.appendChild(inpuSub)
+
+        //hiding elements
+        inpu.classList.add("hide-element");
+        inpuEmail.classList.add("hide-element");
+        inpuAnimeName.classList.add("hide-element");
+
         inpuSub.addEventListener("click",(e)=>{
             inpu.value=names
             inpuAnimeName.value=data[i].title
@@ -41,14 +47,14 @@ async function getmovie(){
         //  end of form
         img.classList.add("image")
         img.setAttribute("src",data[i].img)
-        
+        form.classList.add("form")
         movieName.classList.add("name")
         movieName.innerHTML=data[i].title
         card.classList.add("card1")
         card.appendChild(img)
         card.appendChild(movieName)
         content.appendChild(card)
-        content.appendChild(form)
+        card.appendChild(form)
 
     }
 }
