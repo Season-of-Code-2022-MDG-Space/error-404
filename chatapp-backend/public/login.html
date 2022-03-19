@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGNUP AND LOGIN</title>
+    <link rel="stylesheet" href="css/log.css">
+</head>
+<body>
+    <div class="container">
+        <div class="image">
+                Watch
+                <br>
+                It Now
+        <img src="./IMAGE.png" alt="">
+        </div>
+        <div class="details">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="login()" >LogIN</button>
+                <button type="button" class="toggle-btn" onclick="register()" >SignUP</button>
+            </div>
+            <div class="logo">
+                <img src="./watchitnow1.png" alt="">
+            </div>
+            <!-- Login form -->
+            <form action="/login" method="post" class="login-form" id="login">
+                <input name="name" type="text" class="form-field" placeholder="Username"  required>
+                <input name="password" type="password" class="form-field" placeholder="Password" required>
+                <button class="submit" type="submit" >Go</button>
+            </form>
+            <!-- Registration form
+            <form action="" class="login-form" id="register">
+                <input type="text" class="form-field" placeholder="Username" required>
+                <input type="email" class="form-field" placeholder="EmailID" required>
+                <input type="password" class="form-field" placeholder="Password" required>
+                <button class="submit" type="submit">Go</button>
+            </form> -->
+        </div>
+    </div>
+</body>
+<script src="js/login.js"></script>
+</html>

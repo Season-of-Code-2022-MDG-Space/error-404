@@ -1,0 +1,131 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    overflow-y: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: rgb(172, 113, 123);
+  }
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #47395E;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: white;
+  }
+
+.navbar{
+    display: flex;
+    width: 100vw;
+    height: 15vh;
+    background-color: #1D0840;
+}
+
+.logo{
+    width: 20vw;
+}
+
+.logo img{
+    margin-left: 2.5vw;
+    margin-top: 3.2vh;
+    width: 15vw;
+    height: 8vh;
+    background-color: rgb(223, 30, 62);
+}
+
+.items{
+    width: 60vw;
+    height: 15vh;
+    text-align: center;
+    color: aliceblue;
+    font-size: xx-large;
+    margin-top: 4.5vh;
+    text-shadow: 1px 1px white;
+    cursor: pointer;
+}
+
+.profile{
+    width: 20vw;
+    height: 15vh;
+    text-align: center;
+    color: rgb(212, 48, 76);
+    font-size: 300%;
+    margin-top: 2.5vh;
+    text-shadow: 1px 1px rgb(172, 113, 123);
+    cursor: pointer;
+}
+
+.content{
+    padding-top: 5vh;
+    width: 100vw;
+    height: 77vh;
+    background-color: aqua;
+    overflow-y: scroll;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    
+}
+
+.card1{
+  display: flex;
+  flex-direction: column;
+    height: 34vh;
+    background-color: aqua;
+    
+    transition: 0.3s;
+}
+
+.card1:hover{
+    transform: scale(1.15);
+    box-sizing: border-box;
+    border: 2px solid black;
+}
+
+.image{
+    
+    margin: 1.5vh 2vw;
+    
+    height: 15vh;
+    background-color: orange;
+    
+}
+
+.name{
+    
+    height:auto;
+    
+   
+    font-size: 18px;
+    padding-top: 1vh ;
+    text-align: center;
+}
+
+.like{
+    background: purple;
+    width: auto;
+    height: 5vh;
+    padding-top: 1vh;
+    font-size: x-large;
+    color: white;
+    text-align: center;
+}
+
+.footer{
+    background: #1D0840;
+    color: white;
+    padding-top: 2vh;
+    text-align: center;
+    width: 100vw;
+    height: 8vh;
+    font-weight: 900;
+    font-size: large;
+}
