@@ -3,14 +3,11 @@
 var url_string = window.location;
 var url = new URL(url_string);
 var names = url.searchParams.get("name");
+var list=document.getElementById("input");
 var email = url.searchParams.get("email");
 console.log(names,email)
-const u=document.querySelector(".username")
-const submit=document.querySelector(".submit")
 
-submit.addEventListener("click",()=>{
-    u.value=names
-})
+
 const btn=document.querySelector(".btn")
 async function friends(){
     const friends=await fetch("/friendReq")
@@ -34,11 +31,17 @@ async function friends(){
 async function getFriends(){
     const friends=await fetch("/friendReq")
     const data=await friends.json()
-    console.log(data[0])
+    console.log(data)
     for(let i=0;i<data.length;i++){
         let div=document.createElement("div")
+        let option=document.createElement("option")
+        console.log(data[i].name)
         div.innerHTML=data[i].name
+        option.innerHTML=data[i].name
+        list.appendChild(option)
+       
         document.body.appendChild(div)
     }
 }
 getFriends()
+

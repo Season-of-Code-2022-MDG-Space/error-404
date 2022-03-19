@@ -207,6 +207,11 @@ app.post("/chatroom",async (req,res)=>{
     }
 })
 
+// app.get("/friendReq2",async (req,res)=>{
+//     const allFriends= await regis.find()
+//     res.json(allFriends)
+// })
+
 const PORT=3000 || process.env.PORT
 app.use(express.static(path.join(__dirname,'public')))
 server.listen(PORT,()=>console.log(`server on ${PORT}`))
