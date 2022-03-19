@@ -167,28 +167,19 @@ app.post("/friends",async (req,res)=>{
     
     console.log(regis.find())
 })
+// like dislike implementation
 app.post("/movies",async (req,res)=>{
    const animeName=req.body.animeName
    const currUser=req.body.currUser
    const currMail=req.body.currMail
-   const userExist=regis.findOne({email:currMail})
-   if(userExist!=null){
+   const likeDislike=req.body.likeDislike
+   if(likeDislike=="like"){
 
-      if(userExist.find({likes:[animeName]})==null){
-          const client=await regis.updateMany({email:currMail},{$push:{likes:animeName}})
-          res.redirect(`//localhost:3000/movies.html?name=${currUser}&email=${currMail}`)
-
-        }
-        else{
-          res.redirect(`//localhost:3000/movies.html?name=${currUser}&email=${currMail}`)
-        
-        }
-    }
+       const client=await regis.updateMany({email:currMail},{$push:{likes:animeName}})
+    }  
     else{
-        res.send("error")
+       const clients=await regis.updateMany({email:currMail},{$pull:{likes:animeName}})
     }
-
-
 })
 app.post("/chatroom",async (req,res)=>{
     try {
@@ -206,11 +197,6 @@ app.post("/chatroom",async (req,res)=>{
         console.log(error)
     }
 })
-
-// app.get("/friendReq2",async (req,res)=>{
-//     const allFriends= await regis.find()
-//     res.json(allFriends)
-// })
 
 const PORT=3000 || process.env.PORT
 app.use(express.static(path.join(__dirname,'public')))

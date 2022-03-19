@@ -9,7 +9,7 @@ async function getmovie(){
     const data= await getmovies.json();
     console.log(data)
     const content=document.querySelector(".content")
-    for(let i=0;i<data.length;i++){
+    for(let i=0;i<data.length;i++){ 
         const card=document.createElement("div")
         const img=document.createElement("img")
         const movieName=document.createElement("div")
@@ -17,11 +17,15 @@ async function getmovie(){
         const form=document.createElement("form")
         form.setAttribute("method","post")
         form.setAttribute("action","/movies")
+        form.setAttribute("target","frame")
         const inpu=document.createElement("input")
+        const likeDislike=document.createElement("input")
         const inpuAnimeName=document.createElement("input")
         const inpuSub=document.createElement("input")
         const inpuEmail=document.createElement("input")
+        likeDislike.setAttribute("type","text")
         inpu.setAttribute("type","text")
+        likeDislike.setAttribute("name","likeDislike")
         inpu.setAttribute("name","currUser")
         inpuEmail.setAttribute("type","text")
         inpuEmail.setAttribute("name","currMail")
@@ -29,6 +33,7 @@ async function getmovie(){
         inpuAnimeName.setAttribute("name","animeName")
         inpuSub.setAttribute("type","submit")
         form.appendChild(inpu)
+        form.appendChild(likeDislike)
         form.appendChild(inpuAnimeName)
         form.appendChild(inpuEmail)
         form.appendChild(inpuSub)
@@ -36,6 +41,13 @@ async function getmovie(){
             inpu.value=names
             inpuAnimeName.value=data[i].title
             inpuEmail.value=email
+            if(likeDislike.value=="like"){
+                likeDislike.value="dislike"
+            }
+            else{
+                likeDislike.value="like"
+            }
+
             
         })
         //  end of form
@@ -53,3 +65,9 @@ async function getmovie(){
     }
 }
 getmovie()
+const allFri=document.querySelector(".friendsall")
+allFri.setAttribute("href",`//localhost:3000/friends.html?name=${names}&email=${email}`)
+const home=document.querySelector(".home")
+home.setAttribute("href",`//localhost:3000/home.html?name=${names}&email=${email}`)
+const chats=document.querySelector(".chats")
+chats.setAttribute("href",`//localhost:3000/chatroom.html?name=${names}&email=${email}`)
