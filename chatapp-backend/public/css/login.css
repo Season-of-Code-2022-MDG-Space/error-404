@@ -46,7 +46,7 @@
     text-align: center;
     position: absolute;
     top: 360px;
-    left: 210px;
+    left: 175px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,9 +60,9 @@
 }
 .data{
     position: relative;
-    top: 100px;
+    top: 20vh;
     width: 40vw;
-    height: 80vh;
+    height: 60vh;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(25px);
     border-radius: 40px;
@@ -71,19 +71,22 @@
     background: rgba(255, 255, 255, 0.1);
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
-    height:30vh;
+    height:20vh;
     width: 40vw;
     text-align: center;
 }
 .image img{
-    border-radius: 80px;
     margin-top: 25px;
-    width: 160px;
+    width: 30vw;
+    height: 16vh;
+    background: #1D0840;
 }
 .login{
     background-color: rgba(255, 255, 255, 0.1) ;
     width: 40vw;
-    height: 30vh;
+    height: 40vh;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
     text-align: center;
     font-size: xx-large;
     font-weight: normal;
@@ -108,27 +111,37 @@
     text-align: left;
     color: #000000;
 }
-.submit{
+/* .submit{
     width: 40vw;
-    height: 20vh;
+    height: 10vh;
     background: rgba(255, 255, 255, 0.1);
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
     text-align: center;
-}
-.submit button{
+} */
+
+.join{
+    position: absolute;
+    top: 40vh;
+    right: 15vw;
+    cursor: pointer;
+    height: 7vh;
+    width: 10vw;
     font-size: xx-large;
     font-weight: bold;
     border-color: #F8CE3C;
     background-color: #F8CE3C;
     border-width: 0;
     border-radius: 30px;
-    height: 7vh;
-    width: 10vw;
 }
 
-.join{
-    cursor: pointer;
+.username{
+    display: none;
+}
+
+.Channelname{
+    outline: 0;
+    padding-left: 2vw;
 }
 
 /* .username{
