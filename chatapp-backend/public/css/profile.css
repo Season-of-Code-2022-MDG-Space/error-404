@@ -9,7 +9,9 @@ body{
     overflow: hidden;
     background: #1D0840
 }
-
+a{
+    text-decoration: none;
+}
 .navbar{
     width: 100vw;
     height: 15vh;
