@@ -1,3 +1,4 @@
+
 *{
     padding: 0;
     margin: 0;
@@ -67,7 +68,7 @@
 .content{
     padding-top: 5vh;
     width: 100vw;
-    height: 77vh;
+    height: 73vh;
     background-color: aqua;
     overflow-y: scroll;
     display: grid;
@@ -76,16 +77,19 @@
 }
 
 .card1{
-  display: flex;
-  flex-direction: column;
+    position: relative;
+    display: flex;
+    flex-direction: column;
     height: 34vh;
     background-color: aqua;
-    
+    opacity: 0.5;
     transition: 0.3s;
+    margin-bottom: 2vh;
 }
 
 .card1:hover{
-    transform: scale(1.15);
+    /* transform: scale(1.15); */
+    opacity: 1;
     box-sizing: border-box;
     border: 2px solid black;
 }
@@ -98,34 +102,46 @@
     background-color: orange;
     
 }
-.frame{
+
+.hide-element{
     display: none;
 }
 
 .name{
-    
     height:auto;
-    
-   
     font-size: 18px;
     padding-top: 1vh ;
     text-align: center;
 }
 
 .like{
-    background: purple;
-    width: auto;
-    height: 5vh;
-    padding-top: 1vh;
-    font-size: x-large;
+    background: red;
+    width: 5vw;
+    height: 3vh;
+    /* padding-top: 1vh; */
+    font-size: medium;
     color: white;
-    text-align: center;
+    /* text-align: center; */
+}
+
+/* .like::after{
+    background: #47395E;
+    width: 5vw;
+    height: 3vh;
+    font-size: medium;
+    color: white;
+} */
+
+.form{
+    position: absolute;
+    bottom: 1vh;
+    right: 3.5vw;
 }
 
 .footer{
     background: #1D0840;
     color: white;
-    padding-top: 2vh;
+    padding-top: 1.5vh;
     text-align: center;
     width: 100vw;
     height: 8vh;
