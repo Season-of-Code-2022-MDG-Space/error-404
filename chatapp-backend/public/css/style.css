@@ -7,6 +7,7 @@
 	--success-color: #5cb85c;
 	--error-color: #d9534f;
 } */
+
 a{
     text-decoration: none;
 }
@@ -33,7 +34,7 @@ a{
 
 body{
     position: relative;
-    background: rgba(30, 221, 248, 0.15) !important;
+    background: rgba(1, 1, 14, 0.15) !important;
 }
 
 .profileimage
@@ -60,7 +61,8 @@ background: #FFFEFE;
 }
 .containers{
     overflow: scroll;
-    background-color: red;
+    background-color: rgb(59, 4, 59);
+ overflow-x: hidden;
     height: 78vh;
     width: 73vw;
     position: relative;
@@ -98,7 +100,7 @@ background: #FFFEFE;
     height: 100vh;
     left: 0px;
     top: 0px;
-    background: rgba(15, 94, 187, 0.82);
+    background-color: rgb(39, 29, 92);
 }
 /* .list-group {
     position: absolute;
@@ -114,10 +116,10 @@ background: #FFFEFE;
     height: 120px;
     left: 19px;
     top: 269px;
-    background: rgba(15, 94, 187, 0.82) important;
+    background: pink;
     overflow:hidden; 
     overflow-y:scroll;
-    background-color: yellow;
+    
     font-size: 10px;
 
 }
@@ -130,7 +132,8 @@ background: #FFFEFE;
     background: rgba(15, 94, 187, 0.82) important;
     overflow:hidden; 
     overflow-y:scroll;
-    background-color: yellow;
+       background: pink;
+
     font-size: 10px;
 }
 .list{
@@ -187,7 +190,7 @@ border-radius: 18.5px;
     left: 395px;
     top: 5px;
 
-    background: rgba(15, 94, 187, 0.82);
+    background-color: rgb(39, 29, 92);
     border-radius: 11px;
 }
 .icons

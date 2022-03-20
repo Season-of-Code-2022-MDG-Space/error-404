@@ -37,15 +37,23 @@ async function getmovie(){
         form.appendChild(inpuAnimeName)
         form.appendChild(inpuEmail)
         form.appendChild(inpuSub)
+        inpu.classList.add("hide-element");
+        inpuEmail.classList.add("hide-element");
+        inpuAnimeName.classList.add("hide-element");
+        likeDislike.classList.add("hide-element");
+        inpuSub.setAttribute("value","💛")
         inpuSub.addEventListener("click",(e)=>{
             inpu.value=names
             inpuAnimeName.value=data[i].title
             inpuEmail.value=email
+
             if(likeDislike.value=="like"){
                 likeDislike.value="dislike"
+                inpuSub.setAttribute("value","💛")
             }
             else{
                 likeDislike.value="like"
+                inpuSub.setAttribute("value","❤️")
             }
 
             
@@ -53,14 +61,16 @@ async function getmovie(){
         //  end of form
         img.classList.add("image")
         img.setAttribute("src",data[i].img)
-        
+        form.classList.add("form")
         movieName.classList.add("name")
+        inpuSub.classList.add("like");
+        inpuSub.innerText="this"
         movieName.innerHTML=data[i].title
         card.classList.add("card1")
         card.appendChild(img)
         card.appendChild(movieName)
         content.appendChild(card)
-        content.appendChild(form)
+        card.appendChild(form)
 
     }
 }
