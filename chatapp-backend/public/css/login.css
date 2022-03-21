@@ -13,6 +13,9 @@
     width: 45vw;
     height: 100vh;
 }
+a{
+    text-decoration: none;
+}
 .name{
     text-align: center;
     position: absolute;

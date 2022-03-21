@@ -4,7 +4,9 @@
     font-family: sans-serif;
     overflow-y: hidden;
 }
-
+a{
+    text-decoration: none;
+}
 ::-webkit-scrollbar {
     width: 10px;
   }

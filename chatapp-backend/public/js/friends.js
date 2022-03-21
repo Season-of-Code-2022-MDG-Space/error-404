@@ -1,5 +1,3 @@
-
-
 var url_string = window.location;
 var url = new URL(url_string);
 var names = url.searchParams.get("name");
@@ -23,8 +21,8 @@ async function friends(){
     else{
         console.log("thin")
     }
-}
-}
+  }
+} 
 
 async function getFriends(){
     const friends=await fetch("/friendReq")
@@ -34,18 +32,33 @@ async function getFriends(){
         let div=document.createElement("div")
         let option=document.createElement("option")
         console.log(data[i].name)
+        const anchor=document.createElement("a")
+        anchor.setAttribute("href",`//localhost:3000/profile.html?name=${data[i].name}&email=${data[i].email}`)
         div.classList.add("element")
-        div.innerHTML=data[i].name
+        anchor.innerHTML=data[i].name
+        div.appendChild(anchor)
         option.innerHTML=data[i].name
         list.appendChild(option)
        
         document.body.appendChild(div)
     }
 }
+// const friendDiv=document.querySelector(".friend")
+// friendDiv.style.display="none"
+// const sendBtn=document.querySelector(".sendBtn")
+// sendBtn.addEventListener("click",()=>{
+//     if(friendDiv.value=="addFriend"){
+//         friendDiv.value="none"
+//     }
+//     else{
+//         friendDiv.value="addFriend"
+//     }
+// })
 getFriends()
 
 async function myFunction()
-{
+{   
+  
     document.querySelector('.username').value=names;
 }
 

@@ -47,11 +47,13 @@ app.use(express.urlencoded({extended:false}))
             const name= req.body.name
             const password= req.body.password
             const thing= await regis.findOne({name:name})
-            if(thing.password===password){
+            if(thing==null){
+               res.send("user doesn;t exist")
+           }
+           else if(thing.password===password){
                 
                 res.redirect(`//localhost:3000/home.html?name=${name}&email=${thing.email}`)
             }
-           
             else{
                 res.send("password doesn't match")
          }
@@ -155,17 +157,17 @@ app.get("/friendReq",async (req,res)=>{
 app.post("/friends",async (req,res)=>{
     const username=req.body.username
     const people=req.body.people
-    const userExist=regis.findOne({name:people})
-    if(userExist!=null){
+    // const isPresent=await regis.find({friends:people})
+    // if(isPresent==null){
         const client=await regis.updateMany({name:username},{$push:{friends:people}})
-        const reciever= await regis.updateMany({name:people},{$push:{friends:username}})
+        const reciever= await regis.updateMany({name:people},{$push:{friends:username}})        
         res.send("you are now friends")
-    }
-    else{
-        res.send("such a user doesn't exist")
-    }
-    
-    console.log(regis.find())
+    // }else{
+    //     console.log("you are already friends")
+    // }
+
+ 
+    // console.log(regis.find())
 })
 // like dislike implementation
 app.post("/movies",async (req,res)=>{
