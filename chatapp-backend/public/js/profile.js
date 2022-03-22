@@ -27,14 +27,9 @@ async function getFriends(){
         }
     }
 }
-const backBtn=document.querySelector(".prev")
-const a=document.createElement("a")
-a.setAttribute("href",`//localhost:3000/home.html?name=${names}&email=${email}`)
-a.innerHTML=`<ul>
-<li class="prev"><span>
-</span></li>
-</ul>`
-backBtn.appendChild(a)
+
+
+
 async function getmovie(){
     const friends=await fetch("/friendReq")
     const data=await friends.json()

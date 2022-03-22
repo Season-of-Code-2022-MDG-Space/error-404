@@ -40,7 +40,7 @@ socket.on("message",message=>{
     window.setInterval(function() {
         var elem = document.getElementById('data');
         msgContainer.scrollTop = msgContainer.scrollHeight;
-      }, 100);
+      }, 6000);
 
 })
 

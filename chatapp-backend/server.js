@@ -160,8 +160,9 @@ app.post("/friends",async (req,res)=>{
     // const isPresent=await regis.find({friends:people})
     // if(isPresent==null){
         const client=await regis.updateMany({name:username},{$push:{friends:people}})
-        const reciever= await regis.updateMany({name:people},{$push:{friends:username}})        
-        res.send("you are now friends")
+        const reciever= await regis.updateMany({name:people},{$push:{friends:username}})  
+           
+        res.send("  ")
     // }else{
     //     console.log("you are already friends")
     // }
